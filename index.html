@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080611">
+<meta name="description" content="C7PL Diwali Utsav 2026 — a royal celebration for the C7PL family.">
+<title>C7PL | Diwali Utsav 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="grain"></div>
+<header class="nav">
+  <a class="identity" href="#" aria-label="C7PL home"><span class="crest">C</span><span><b>C7PL</b><small>DIWALI UTSAV · 2026</small></span></a>
+  <button class="sound" id="sound">♫ <span>Sound off</span></button>
+</header>
+
+<main>
+<section class="page active" id="welcome">
+  <div class="hero-orbit"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="hero-diya">🪔</div></div>
+  <div class="overline"><i></i> THE ROYAL FESTIVAL OF LIGHTS <i></i></div>
+  <h1 class="hero-title">A Night of<br><em>Golden Lights</em></h1>
+  <p class="hero-sub">One game. One family. A thousand memories.<br>Celebrating the spirit of C7PL this Diwali.</p>
+  <div class="hero-date">08 <span>NOV</span> 2026 <b>✦</b> C7PL FAMILY EDITION</div>
+  <button class="gold-btn" data-next="experience">ENTER THE CELEBRATION <span>↗</span></button>
+  <div class="scroll-note">A LITTLE MAGIC IS WAITING BELOW</div>
+</section>
+
+<section class="page" id="experience">
+  <div class="section-tag">01 / THE LIGHTING CEREMONY</div>
+  <h2>Light a diya.<br><em>Share the glow.</em></h2>
+  <p class="muted">Tap the diya to send golden sparks across the night sky.</p>
+  <button class="big-diya" id="diya" aria-label="Light diya"><span>🪔</span><small>TAP TO LIGHT</small></button>
+  <div class="quote">
+    <div class="quote-mark">✦</div>
+    <small>A WISH FROM C7PL</small>
+    <h3>May your home glow with peace,<br>and your heart shine with joy.</h3>
+    <p>To every player, friend and family member — wishing you a safe, bright and beautiful Diwali.</p>
+  </div>
+  <div class="actions"><button class="ghost-btn" data-next="welcome">← BACK</button><button class="gold-btn" data-next="squads">MEET OUR SQUADS →</button></div>
+</section>
+
+<section class="page" id="squads">
+  <div class="section-tag">02 / UNITED BY CRICKET</div>
+  <h2>The C7PL<br><em>family.</em></h2>
+  <p class="muted">Choose your squad. Add names to make this celebration yours.</p>
+  <div class="squads">
+    <button class="squad active" data-squad="GL"><b>GL</b><span>TEAM GL</span></button>
+    <button class="squad" data-squad="KBS"><b>KBS</b><span>TEAM KBS</span></button>
+    <button class="squad" data-squad="LSK"><b>LSK</b><span>TEAM LSK</span></button>
+    <button class="squad" data-squad="WK"><b>WK</b><span>TEAM WK</span></button>
+  </div>
+  <div class="roster">
+    <div class="roster-top"><div><small>SQUAD ROSTER</small><h3 id="squadTitle">GL · PLAYERS</h3></div><span id="memberCount">0 MEMBERS</span></div>
+    <div id="members" class="members"><p class="empty">Your squad names will appear here.</p></div>
+    <form id="addForm"><input id="memberName" maxlength="32" placeholder="Add a player name..." aria-label="Player name"><button class="add">ADD +</button></form>
+    <p class="note">Names are saved in this browser. Connect Firebase later to share one live roster with everyone.</p>
+  </div>
+  <div class="actions"><button class="ghost-btn" data-next="experience">← BACK</button><button class="gold-btn" data-next="finale">NEXT →</button></div>
+</section>
+
+<section class="page" id="finale">
+  <div class="section-tag">03 / THE BIG DIWALI MOMENT</div>
+  <h2>The countdown<br><em>to light.</em></h2>
+  <p class="muted">Diwali · 8 November 2026 · India time</p>
+  <div class="timer">
+    <div><b id="d">000</b><small>DAYS</small></div><div><b id="h">00</b><small>HOURS</small></div><div><b id="m">00</b><small>MINUTES</small></div><div><b id="s">00</b><small>SECONDS</small></div>
+  </div>
+  <div class="final-card">
+    <div class="star">✦</div><small>TO EVERY C7PL PLAYER</small>
+    <h3>Different teams.<br><em>One shining family.</em></h3>
+    <p>May this Diwali bring fresh beginnings, big wins, good health and unforgettable moments to you and your loved ones.</p>
+    <b class="signature">WITH LOVE · C7PL 2026</b>
+  </div>
+  <div class="share-card">
+    <small>PASS THE LIGHT FORWARD</small><h3>Share this celebration</h3>
+    <div class="share-actions"><button id="share">↗ SHARE</button><button id="copy">▣ COPY LINK</button><button id="personal">✧ PERSONAL WISH</button></div>
+    <p id="status" aria-live="polite"></p>
+  </div>
+  <button class="ghost-btn" data-next="welcome">↻ REPLAY EXPERIENCE</button>
+</section>
+</main>
+
+<footer><span>✦</span> C7PL DIWALI UTSAV 2026 <span>✦</span><small>LIGHT · UNITY · FRIENDSHIP</small></footer>
+
+<dialog id="wishDialog">
+  <form method="dialog" class="dialog">
+    <button class="x" aria-label="Close">×</button>
+    <small>YOUR PERSONAL GREETING</small><h2>Make a wish<br><em>your own.</em></h2>
+    <label for="yourName">Your name</label><input id="yourName" maxlength="35" placeholder="Enter your name">
+    <div class="preview" id="preview">Wishing you a bright and beautiful Diwali! ✨</div>
+    <button class="gold-btn" id="sendWish" type="button">SHARE MY WISH ↗</button>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body></html>
